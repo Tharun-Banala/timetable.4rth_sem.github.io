@@ -4,17 +4,22 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <style>
 
+    </style>
 </head>
 
 <body>
 
     <div class="container">
+        <div align="center"> <button class="btn btn-success" onclick="changeClass()" id="bt">LIGHT MODE</button> </div><br>
         <table class="table table-dark table" id="myid">
             <thead>
                 <tr>
                     <th scope="col">DAY</th>
-                    <th scope="col">TIMETABLE <button class="default" onclick="changeClass()" id="myButton">Click Here!</button></th>
+                    <th scope="col">
+                        TIMETABLE
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -214,13 +219,16 @@
             document.getElementById('myid3').className = "table table-light table";
             document.getElementById('myid4').className = "table table-light table";
             document.getElementById('myid5').className = "table table-light table";
+            document.getElementById('bt').innerHTML = "DARK MODE";
         } else {
             document.getElementById('myid').className = "table table-dark table";
             document.getElementById('myid1').className = "table table-dark table";
             document.getElementById('myid2').className = "table table-dark table";
             document.getElementById('myid3').className = "table table-dark table";
-            document.getElementById('myid4').className = "table table-darktable";
+            document.getElementById('myid4').className = "table table-dark table";
             document.getElementById('myid5').className = "table table-dark table";
+            document.getElementById('bt').innerHTML = "LIGHT MODE";
+
         }
     }
 </script>
