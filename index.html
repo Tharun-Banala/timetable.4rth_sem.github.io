@@ -8,19 +8,20 @@
 </head>
 
 <body>
+
     <div class="container">
-        <table class="table table-dark table">
+        <table class="table table-dark table" id="myid">
             <thead>
                 <tr>
                     <th scope="col">DAY</th>
-                    <th scope="col">TIMETABLE</th>
+                    <th scope="col">TIMETABLE <button class="default" onclick="changeClass()" id="myButton">Click Here!</button></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">MONDAY</th>
                     <td>
-                        <table class="table table-dark table">
+                        <table class="table table-dark table" id="myid1">
                             <thead>
                                 <tr>
                                     <TH>TIMINGS</TH>
@@ -62,7 +63,7 @@
                 <tr>
                     <th scope="row">TUESDAY</th>
                     <td>
-                        <table class="table table-dark table">
+                        <table class="table table-dark table" id="myid2">
                             <thead>
                                 <tr>
                                     <TH>TIMINGS</TH>
@@ -99,7 +100,7 @@
                 <tr>
                     <th scope="row">WEDNESDAY</th>
                     <td>
-                        <table class="table table-dark table">
+                        <table class="table table-dark table" id="myid3">
                             <thead>
                                 <tr>
                                     <TH>TIMINGS</TH>
@@ -135,7 +136,7 @@
                 <tr>
                     <th scope="row">THURSDAY</th>
                     <td>
-                        <table class="table table-dark table">
+                        <table class="table table-dark table" id="myid4">
                             <thead>
                                 <tr>
                                     <TH>TIMINGS</TH>
@@ -162,7 +163,7 @@
                 <tr>
                     <th scope="row">FRIDAY</th>
                     <td>
-                        <table class="table table-dark table">
+                        <table class="table table-dark table" id="myid5">
                             <thead>
                                 <tr>
                                     <TH>TIMINGS</TH>
@@ -199,3 +200,30 @@
 
             </tbody>
         </table>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function changeClass() {
+
+
+        if (document.getElementById('myid').className === 'table table-dark table') {
+            document.getElementById('myid').className = "table table-light table";
+            document.getElementById('myid1').className = "table table-light table";
+            document.getElementById('myid2').className = "table table-light table";
+            document.getElementById('myid3').className = "table table-light table";
+            document.getElementById('myid4').className = "table table-light table";
+            document.getElementById('myid5').className = "table table-light table";
+        } else {
+            document.getElementById('myid').className = "table table-dark table";
+            document.getElementById('myid1').className = "table table-dark table";
+            document.getElementById('myid2').className = "table table-dark table";
+            document.getElementById('myid3').className = "table table-dark table";
+            document.getElementById('myid4').className = "table table-darktable";
+            document.getElementById('myid5').className = "table table-dark table";
+        }
+    }
+</script>
+
+
+</html>
