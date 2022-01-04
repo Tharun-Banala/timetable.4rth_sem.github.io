@@ -11,9 +11,9 @@
     </style>
 </head>
 
-<body>
+<body onload="changeorder()">
 
-    <div class="container">
+    <div class="container" id="rw">
         <br>
         <div align="center"> <button class="btn btn-success" onclick="changeClass()" id="bt">LIGHT MODE</button> </div><br>
         <table class="table table-dark table" id="myid">
@@ -26,7 +26,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="rw">
                     <th scope="row">MONDAY</th>
                     <td>
                         <table class="table table-dark table" id="myid1">
@@ -69,7 +69,7 @@
                 </table>
                 </td>
                 </tr>
-                <tr>
+                <tr class="rw">
                     <th scope="row">TUESDAY</th>
                     <td>
                         <table class="table table-dark table" id="myid2">
@@ -104,7 +104,7 @@
                 </table>
                 </td>
                 </tr>
-                <tr>
+                <tr class="rw">
                     <th scope="row">WEDNESDAY</th>
                     <td>
                         <table class="table table-dark table" id="myid3">
@@ -141,7 +141,7 @@
                 </table>
                 </td>
                 </tr>
-                <tr>
+                <tr class="rw">
                     <th scope="row">THURSDAY</th>
                     <td>
                         <table class="table table-dark table" id="myid4">
@@ -168,7 +168,7 @@
                 </table>
                 </td>
                 </tr>
-                <tr>
+                <tr class="rw">
                     <th scope="row">FRIDAY</th>
                     <td>
                         <table class="table table-dark table" id="myid5">
@@ -181,7 +181,11 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <TD>09:00-10:00</TD>
+                                    <TD>
+
+                                        09:00-10:00
+
+                                    </TD>
                                     <td><a href="https://meet.google.com/pqe-cjnt-aws" class="btn btn1 btn-outline-success">CS 206</a></td>
                                     <td></td>
                                 </tr>
@@ -209,6 +213,7 @@
             </tbody>
         </table>
     </div>
+
 </body>
 
 <script type="text/javascript">
@@ -233,6 +238,24 @@
             document.getElementById('bt').innerHTML = "LIGHT MODE";
 
         }
+    }
+
+    function changeorder() {
+        var table = document.getElementById('myid');
+        var x = table.rows;
+        var date = new Date();
+        var day = date.getDay();
+
+        if (day > 0 && day < 6) {
+            for (var i = 5; i >= day; i--) {
+                x[1].parentNode.insertBefore(x[5], x[1]);
+            }
+        }
+
+
+
+
+
     }
 </script>
 
