@@ -62,7 +62,7 @@
                                     <td><a href="https://meet.google.com/fzn-tpkc-eop" class="btn btn1 btn-outline-success">CS 202</a></td>
                                     <td></td>
                                 </tr>
-                                <tr>
+                                <tr id="myrow">
                                     <TD>02:00-05:00</TD>
                                     <td> <a class="btn btn1 btn-outline-success" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">
                                         CS 254
@@ -244,9 +244,11 @@
             document.getElementById('myid4').className = "table table-dark table";
             document.getElementById('myid5').className = "table table-dark table";
             document.getElementById('bt').innerHTML = "LIGHT MODE";
-
         }
+    }
 
+    function dayNo(y, m, d) {
+        return --m * 31 - (m > 1 ? (1054267675 >> m * 3 - 6 & 7) - (y & 3 || !(y % 25) && y & 15 ? 0 : 1) : 0) + d;
     }
 
     function changeorder() {
@@ -254,17 +256,24 @@
         var x = table.rows;
         var date = new Date();
         var day = date.getDay();
-
         if (day > 0 && day < 6) {
             for (var i = 5; i >= day; i--) {
                 x[1].parentNode.insertBefore(x[5], x[1]);
             }
         }
 
-
-
-
-
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        var d = date.getDate();
+        var fixed = 24;
+        var change = --m * 31 - (m > 1 ? (1054267675 >> m * 3 - 6 & 7) - (y & 3 || !(y % 25) && y & 15 ? 0 : 1) : 0) + d;
+        var diff = change - fixed;
+        diff = Math.ceil(diff / 7);
+        if (day == 1) {
+            if (diff % 2 == 0) {
+                document.getElementById('myrow').style.display = "none";
+            }
+        }
     }
 </script>
 
