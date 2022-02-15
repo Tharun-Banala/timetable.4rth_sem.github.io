@@ -275,11 +275,11 @@
         var change = --m * 31 - (m > 1 ? (1054267675 >> m * 3 - 6 & 7) - (y & 3 || !(y % 25) && y & 15 ? 0 : 1) : 0) + d;
         var diff = change - fixed;
         diff = Math.ceil(diff / 7);
-        if (day == 1) {
+        
             if (diff % 2 == 0) {
                 document.getElementById('myrow').style.display = "none";
             }
-        }
+
     }
 </script>
 
